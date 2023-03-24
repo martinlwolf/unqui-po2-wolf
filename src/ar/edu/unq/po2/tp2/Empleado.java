@@ -7,6 +7,17 @@ public abstract class Empleado {
 	protected String fechaDeNacimiento;
 	protected int sueldoBasico;
 	
+	
+	
+	protected Empleado(String nombre, String direccion, String estadoCivil, String fechaDeNacimiento,
+			int sueldoBasico) {
+		super();
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.estadoCivil = estadoCivil;
+		this.fechaDeNacimiento = fechaDeNacimiento;
+		this.sueldoBasico = sueldoBasico;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -38,11 +49,11 @@ public abstract class Empleado {
 		this.sueldoBasico = sueldoBasico;
 	}
 	
-	protected abstract int calcularSueldoBruto();
+	protected abstract int sueldoBruto();
 	
-	protected abstract int calcularRetenciones();
+	protected abstract int retenciones();
 	
-	protected abstract int calcularSueldoNeto();
+	protected abstract int sueldoNeto();
 	
 	
 }
