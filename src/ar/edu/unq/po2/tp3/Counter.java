@@ -28,6 +28,17 @@ public class Counter {
 		
 		return listaDeNumeros.stream().filter(numero -> this.esPar(numero)).collect(Collectors.toList());
 	}
+	
+	/**
+	 * 
+	 * Esto sirve para comparar entre listas cual tiene mas pares
+	 */
+	public Integer cantidadDeNumerosPares(List<Integer> listaConNumeros) {
+		listaDeNumeros = listaConNumeros;
+		List<Integer> listaDePares = this.obtenerLosNumerosPares();
+		Integer cantidadDePares = listaDePares.size();
+		return cantidadDePares;
+	}
 
 	public List<Integer> obtenerMultiplosDe(Integer numero2) {
 		return listaDeNumeros.stream().filter(numero -> this.es_MultiploDe_(numero, numero2)).collect(Collectors.toList());
