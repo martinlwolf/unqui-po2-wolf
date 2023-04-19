@@ -18,7 +18,15 @@ public abstract class SolicitudDeCredito {
 		return this.montoSolicitado / this.plazoDePagoEnMeses;
 	}
 
-	public abstract void actualizarAprobacion();
+	public void actualizarAprobacion() {
+		if(this.elClienteCumpleLosRequisitos()) {
+			this.estadoDeAprobacion = new EstadoAprobado();
+		}
+		else this.estadoDeAprobacion = new EstadoRechazado();
+		
+	}
+	
+	public abstract boolean elClienteCumpleLosRequisitos();
 
 	public EstadoDeAprobacion getEstadoDeAprobacion() {
 		return estadoDeAprobacion;

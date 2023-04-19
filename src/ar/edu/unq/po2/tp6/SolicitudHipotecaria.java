@@ -10,15 +10,7 @@ public class SolicitudHipotecaria extends SolicitudDeCredito {
 	}
 	
 	@Override
-	public void actualizarAprobacion() {
-		if(this.elClienteCumpleLosRequisitos()) {
-			this.estadoDeAprobacion = new EstadoAprobado();
-		}
-		else this.estadoDeAprobacion = new EstadoRechazado();
-		
-	}
-
-	private boolean elClienteCumpleLosRequisitos() {
+	public boolean elClienteCumpleLosRequisitos() {
 		return ((this.montoSolicitado < this.propiedadEnGarantia.getValorFiscal() * 0.70) & (this.montoCuotaMensual() < this.clienteSolicitante.getSueldoNetoMensual() * 0.50) & (this.elClienteCumpleElRequisitoDeEdad()));
 	}
 
