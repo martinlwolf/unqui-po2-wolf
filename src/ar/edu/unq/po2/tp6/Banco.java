@@ -21,9 +21,24 @@ public class Banco {
 		return this.listaDeSolicitudes.size();
 	}
 
-	public void crearSolicitudDePrestamoPersonalPara_PorElMonto_En_Cuotas(Cliente cliente, double monto, int cuotas) {
-		SolicitudDeCredito prestamoNuevo = new SolicitudPersonal(cliente, monto, cuotas);
-		prestamoNuevo.actualizarAprobacion();
-		this.listaDeSolicitudes.add(prestamoNuevo);
+	public void crearSolicitudDeCredito(SolicitudDeCredito credito) {
+		if(this.contieneAlCliente(credito.getClienteSolicitante())) {
+		credito.actualizarAprobacion();
+		this.listaDeSolicitudes.add(credito);
+		}
+	}
+	
+	public void agregarCliente(Cliente clienteNuevo) {
+		if(this.noContieneAlCliente(clienteNuevo)) {
+			listaDeClientes.add(clienteNuevo);
+		}
+	}
+	
+	public boolean contieneAlCliente(Cliente cliente) {
+		return listaDeClientes.contains(cliente);
+	}
+	
+	public boolean noContieneAlCliente(Cliente cliente) {
+		return listaDeClientes.contains(cliente) == false ;
 	}
 }

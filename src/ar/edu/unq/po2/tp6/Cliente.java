@@ -22,9 +22,16 @@ public class Cliente {
 	}
 
 	public void solicitarPrestamoPersonalDe_EnBanco_En_Cuotas(double monto, Banco banco, int cantidadDeCuotas) {
-		banco.crearSolicitudDePrestamoPersonalPara_PorElMonto_En_Cuotas(this, monto, cantidadDeCuotas);
+		SolicitudDeCredito creditoNuevo = new SolicitudPersonal(this, monto, cantidadDeCuotas);
+		banco.crearSolicitudDeCredito(creditoNuevo);
 	}
 
+	public void solicitarPrestamoHipotecarioDe_EnBanco_En_CuotasConPropiedad_(int monto, Banco banco, int cantidadDeCuotas,
+			Propiedad propiedad) {
+		SolicitudDeCredito creditoNuevo = new SolicitudHipotecaria(this, monto, cantidadDeCuotas, propiedad);
+		banco.crearSolicitudDeCredito(creditoNuevo);
+	}
+	
 	public double getSueldoNetoMensual() {
 		return sueldoNetoMensual;
 	}

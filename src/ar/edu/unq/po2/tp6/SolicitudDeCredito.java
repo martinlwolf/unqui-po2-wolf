@@ -35,6 +35,16 @@ public abstract class SolicitudDeCredito {
 	public void setEstadoDeAprobacion(EstadoDeAprobacion estadoDeAprobacion) {
 		this.estadoDeAprobacion = estadoDeAprobacion;
 	}
+
+	public Cliente getClienteSolicitante() {
+		return clienteSolicitante;
+	}
+
+	public void setClienteSolicitante(Cliente clienteSolicitante) {
+		this.clienteSolicitante = clienteSolicitante;
+	}
+	
+	
 	
 	
 }
