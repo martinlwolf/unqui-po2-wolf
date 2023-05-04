@@ -12,12 +12,12 @@ import org.junit.jupiter.api.Test;
 
 
 public class PointTestCase {
-	Point punto;
-	Point punto2;
+	Punto punto;
+	Punto punto2;
 	@BeforeEach
 	public void setUp() {
-		punto = new Point(1, 1);
-		punto2 = new Point (2,-2);
+		punto = new Punto(1, 1);
+		punto2 = new Punto (2,-2);
 	}
 	
 	@Test

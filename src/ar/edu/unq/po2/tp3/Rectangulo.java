@@ -5,12 +5,12 @@ public class Rectangulo {
 	/**
 	 * Variables
 	 */
-	Point esquinaInferiorIzquierda;
+	Punto esquinaInferiorIzquierda;
 	int altura;
 	int ancho;
 	
 
-	public Rectangulo(Point esquinaInferiorIzquierda, int altura, int ancho) {
+	public Rectangulo(Punto esquinaInferiorIzquierda, int altura, int ancho) {
 		super();
 		this.esquinaInferiorIzquierda = esquinaInferiorIzquierda;
 		this.altura = altura;
@@ -18,33 +18,33 @@ public class Rectangulo {
 	}
 	
 
-	public Point esquinaSuperiorIzquierda() {
+	public Punto esquinaSuperiorIzquierda() {
 		float x = this.esquinaInferiorIzquierda.getX(); 
 		float y =	this.esquinaInferiorIzquierda.getY();
 		y = y + this.altura;
-		Point punto = new Point(x, y);
+		Punto punto = new Punto(x, y);
 		return punto;
 	}
 	
-	public Point esquinaSuperiorDerecha() {
+	public Punto esquinaSuperiorDerecha() {
 		float x = this.esquinaInferiorIzquierda.getX(); 
 		float y =	this.esquinaInferiorIzquierda.getY();
 		y = y + this.altura;
 		x = x + this.ancho;
-		Point punto = new Point(x, y);
+		Punto punto = new Punto(x, y);
 		return punto;
 	}
 	
-	public Point esquinaInferiorDerecha() {
+	public Punto esquinaInferiorDerecha() {
 		float x = this.esquinaInferiorIzquierda.getX(); 
 		float y =	this.esquinaInferiorIzquierda.getY();
 		x = x + this.ancho;
-		Point punto = new Point(x, y);
+		Punto punto = new Punto(x, y);
 		return punto;
 	}
 
 
-	public void moverRectanguloAPunto(Point nuevoPunto) {
+	public void moverRectanguloAPunto(Punto nuevoPunto) {
 		this.esquinaInferiorIzquierda.setXY(nuevoPunto.getX(), nuevoPunto.getY());
 		
 	}

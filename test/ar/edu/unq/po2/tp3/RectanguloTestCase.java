@@ -15,22 +15,22 @@ public class RectanguloTestCase extends PointTestCase {
 	
 	@BeforeEach
 	public void setUp() {
-		punto = new Point(1, 1);
+		punto = new Punto(1, 1);
 		rectangulo = new Rectangulo(punto, 2, 4);
 	}
 	
 	@Test
 	public void testCreacionDelRectangulo() {
-		Point esquinaSupIzq = rectangulo.esquinaSuperiorIzquierda();
+		Punto esquinaSupIzq = rectangulo.esquinaSuperiorIzquierda();
 		assertEquals(esquinaSupIzq.getX(), 1);
 		assertEquals(esquinaSupIzq.getY(), 3);
 	}
 	
 	@Test
 	public void testMoverRectangulo() {
-		Point nuevoPunto = new Point(3, 3);
+		Punto nuevoPunto = new Punto(3, 3);
 		rectangulo.moverRectanguloAPunto(nuevoPunto);
-		Point esquinaSupIzq = rectangulo.esquinaSuperiorIzquierda();
+		Punto esquinaSupIzq = rectangulo.esquinaSuperiorIzquierda();
 		assertEquals(esquinaSupIzq.getX(), 3);
 		assertEquals(esquinaSupIzq.getY(), 5);
 	}
