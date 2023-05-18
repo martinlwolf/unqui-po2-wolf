@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpComposite.ejShapeShifter;
+package ar.edu.unq.po2.tpMethod;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -15,15 +15,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-
-public interface IShapeShifter{
-	public IShapeShifter compose(IShapeShifter shapeShifter);
+public class Empresa {
+	private List<Empleado> listaDeEmpleado;
 	
-	public int deepest();
-	
-	public IShapeShifter flat();
-	
-	public List<Integer> values();
-	
-	public List<IShapeShifter> getListaShifter();
 }

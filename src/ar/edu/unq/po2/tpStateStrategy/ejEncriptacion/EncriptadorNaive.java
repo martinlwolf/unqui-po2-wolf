@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpComposite.ejShapeShifter;
+package ar.edu.unq.po2.tpStateStrategy.ejEncriptacion;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -15,15 +15,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+public class EncriptadorNaive {
+	
+	private MetodoDeEncriptacion metodo;
 
-public interface IShapeShifter{
-	public IShapeShifter compose(IShapeShifter shapeShifter);
+	public MetodoDeEncriptacion getMetodo() {
+		return metodo;
+	}
+
+	public void setMetodo(MetodoDeEncriptacion metodo) {
+		this.metodo = metodo;
+	}
+
+	public String encriptar(String string) {
+		return this.metodo.encriptar(string);
+	}
 	
-	public int deepest();
 	
-	public IShapeShifter flat();
-	
-	public List<Integer> values();
-	
-	public List<IShapeShifter> getListaShifter();
 }
