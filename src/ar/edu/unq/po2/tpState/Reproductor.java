@@ -14,7 +14,7 @@ public class Reproductor {
 	}
 	
 	public String pause() {
-		return this.estado.pause();
+		return this.estado.pausa();
 	}
 	
 	public String stop() {
